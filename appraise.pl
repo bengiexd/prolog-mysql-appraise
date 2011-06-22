@@ -20,7 +20,6 @@ appraise(Thing1, Price, Thing2) :- appraise(Thing1, Price1, Thing3), appraise(Th
 
 appraise_float(Thing1, Price, Thing2) :- appraise(Thing1, RPrice, Thing2), Price is float(RPrice).
 
-% Simple user-friendly function to find cost of n things in terms of
-% something else.
+% Simple user-friendly function to find cost of n things in terms of something else.
 find_cost(Quantity, Thing1, Cost, Thing2) :- appraise(Thing1, Price, Thing2), Cost is Quantity*Price.
 
