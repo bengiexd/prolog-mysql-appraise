@@ -1,7 +1,13 @@
 % appraised holds all the values the computer figured out for itself.
+% Useful if we ever want to force it to recalculate values based on 
+% what we've entered by hand. A simple "retractall(appraised)" would
+% clear that cache out quite nicely.
 :- dynamic appraised/3.
 
 % value holds all the values we've entered by hand.
+% Assumed to be more reliable than "appraised" values,
+% since real-world conversions are sometimes less
+% efficient in one direction versus the other.
 :- dynamic value/3.
 
 % Some quick nonsense assertions to get you started. Feel free to delete these.
