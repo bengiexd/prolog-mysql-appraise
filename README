@@ -1,0 +1,9 @@
+==Appraise for SWI-Prolog==
+One day I thought it might be kinda cool to have a script that could tell you the value of something in terms of anything else.
+
+For example, if I wanted to know how many apples I could get for my Best of Kansas CD, I would simply ask the script:
+"Hey, how many apples is this Kansas CD worth?"
+
+And my script would go out, find a path of exchange between my Kansas CD and apples, and come back with a number.
+
+It seemed to me that Prolog would be the best language for something like this, so I dusted off my Prolog skills and, after finally getting back into the swing of things, cranked out an initial version in about an hour.
