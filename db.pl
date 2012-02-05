@@ -1,3 +1,9 @@
+:- module(db, [ generic_value/4,
+                inferred_value/3,
+		value/3,
+                set_value/3,
+                set_value/4]).
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % HELPER FUNCTIONS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -7,9 +13,9 @@
 % anywhere in the program to interact with the database.
 %
 connect :- odbc_connect('mysql.prolog_appraise', _,
-		[ user(database_username),
+		[ user(your_username),
 		  alias(db),
-		  password(database_password),
+		  password(your_password),
 		  open(once)
 		]).
 
@@ -36,7 +42,8 @@ inferred_value(Thing1, Price, Thing2) :- generic_value(Thing1, Price, Thing2, 1)
 % Sets the value of Thing1 in terms of Thing2.
 % If inferred is not specified, defaults to true.
 set_value(Thing1, Price, Thing2) :- set_value(Thing1, Price, Thing2, 1).
-set_value(Thing1, Price, Thing2, Inferred) :-
+set_value(Thing1, RPrice, Thing2, Inferred) :-
+	Price is float(RPrice),
 	connect,
 	odbc_prepare(db, 'insert into value(thing1, price, thing2, inferred) values (?, ?, ?, ?)', [default, float > decimal, default, integer], Statement),
 	odbc_execute(Statement, [Thing1, Price, Thing2, Inferred]),

@@ -7,3 +7,5 @@ For example, if I wanted to know how many apples I could get for my Best of Kans
 And my script would go out, find a path of exchange between my Kansas CD and apples, and come back with a number.
 
 It seemed to me that Prolog would be the best language for something like this, so I dusted off my Prolog skills and, after finally getting back into the swing of things, cranked out an initial version in about an hour.
+
+After that I went back and added on a MySQL backend for the whole thing with the intention of using it in conjunction with a Python microframework like Bottle.py or Flask to provide a  web-based interface into the whole thing. Didn't work out in the end, but the code might still be useful to you.
