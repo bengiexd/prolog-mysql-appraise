@@ -1,4 +1,4 @@
-:- use_module(db).
+:- use_module('db.pro').
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PRICE FINDING LOGIC
